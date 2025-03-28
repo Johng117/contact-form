@@ -1,9 +1,109 @@
-:root {
-    --green-200: (lighter): hsl(148, 38%, 91%);
---green-600: (medium): hsl(169, 82%, 27%);
---red: hsl(0, 66%, 54%);
---white: hsl(0, 0%, 100%);
---grey-500: (medium): hsl(186, 15%, 59%);
---grey-900: (darker): hsl(187, 24%, 22%);
-
+@font-face {
+  font-family: "Karla";
+  src: url("/assets/fonts/static/Karla-Regular.ttf") format("woff");
+  font-style: normal;
+  font-weight: 400;
 }
+@font-face {
+  font-family: "Karla";
+  src: url("/assets/fonts/static/Karla-Bold.ttf") format("woff");
+  font-style: normal;
+  font-weight: 700;
+}
+:root {
+  --green-200: hsl(148, 38%, 91%);
+  --green-600: hsl(169, 82%, 27%);
+  --red: hsl(0, 66%, 54%);
+  --white: hsl(0, 0%, 100%);
+  --grey-500: hsl(186, 15%, 59%);
+  --grey-900: hsl(187, 24%, 22%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: var(--green-200);
+  font-family: "Karla";
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-container {
+  height: 100%;
+  width: 350px;
+  margin: 2rem 0 0 0;
+  background-color: var(--white);
+  border-radius: 20px;
+  padding: 24px;
+  color: var(--grey-900);
+
+  & .title-text {
+    font-size: 2rem;
+    letter-spacing: -1px;
+    margin-bottom: 30px;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+span {
+  color: var(--green-600);
+  margin-left: 2px;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+input {
+  margin-bottom: 20px;
+}
+
+input,
+#general-label,
+#support-label {
+  border-radius: 7px;
+  border: 1px solid var(--grey-500);
+  height: 50px;
+}
+
+fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+
+  & legend {
+    margin-bottom: 10px;
+  }
+
+  & #general-label,
+  #support-label {
+    margin-bottom: 15px;
+    display: flex;
+  }
+
+  & #general,
+  #support {
+    height: 20px;
+    width: 20px;
+    border: 1px solid var(--grey-500);
+    opacity: 100%;
+  }
+}
+
+/* #general-label, #support-label {
+  border: 1px solid var(--grey-500);
+} */
