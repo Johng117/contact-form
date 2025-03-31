@@ -17,15 +17,22 @@
       <h2 class="title-text">Contact Us</h2>
       <form class="form">
         <!-- input fields -->
-        <label for="fname">First Name <span>*</span></label>
-        <input type="text" id="fname" name="fname" />
+        <article class="fname-lname-container">
+          <label for="fname" id="fname-label"
+            ><h5>First Name <span>*</span></h5>
+            <input type="text" id="fname" name="fname" />
 
-        <label for="lname">Last Name <span>*</span></label>
-        <input type="text" id="lname" name="lname" />
-
+            <h5 class="error-fname-message">This field is required</h5>
+          </label>
+          <label for="lname" id="lname-label"
+            ><h5>Last Name <span>*</span></h5>
+            <input type="text" id="lname" name="lname" />
+            <h5 class="error-lname-message">This field is required</h5>
+          </label>
+        </article>
         <label for="email">Email Address <span>*</span></label>
         <input type="email" id="email" name="email" />
-
+        <h5 class="error-email-message">Please enter a valid email address</h5>
         <!-- radio buttons -->
         <fieldset id="query-group">
           <legend>Query Type <span>*</span></legend>
@@ -50,18 +57,20 @@
             <h5>Support Enquiry</h5>
           </label>
         </fieldset>
+        <h5 class="error-query-message">Please select a query type</h5>
 
         <!-- text area -->
         <label for="message" id="textarea-label">Message <span>*</span></label>
-        <textarea name="message" id="message" rows="14" cols="30"></textarea
-        >
+        <textarea name="message" id="message" rows="14" cols="30"></textarea>
+        <h5 class="error-textarea-message">This field is required</h5>
 
         <!-- Consent statement -->
-        
+
         <label for="consent-input" id="consent-label">
           <h5>I consent to being contacted by the team <span>*</span></h5>
           <input type="checkbox" id="consent-input" name="consent-input" />
         </label>
+        <h5 class="error-consent-message"></h5>
         <!-- Submit button -->
         <button class="btn">Submit</button>
       </form>

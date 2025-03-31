@@ -37,7 +37,7 @@ body {
 
 .main-container {
   height: 100%;
-  max-width: 350px;
+  width: 350px;
   margin: 2rem 0 0 0;
   background-color: var(--white);
   border-radius: 20px;
@@ -51,6 +51,12 @@ body {
   }
 }
 
+h5[class^="error"] {
+  color: var(--red);
+  display: none;
+  font-size: 0.9rem;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -61,6 +67,19 @@ form {
 span {
   color: var(--green-600);
   margin-left: 2px;
+}
+
+.fname-lname-container {
+  & h5 {
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+}
+
+#fname,
+#lname {
+  width: 100%;
 }
 
 label {
@@ -82,13 +101,6 @@ input,
 }
 
 /* TODO hover and focus states */
-
-/* input:hover,
-#general-label:hover,
-#support-label:hover {
-  /* background-color: var(--green-200); */
-/* border: 1px solid var(--green-900); */
-/* } */
 
 fieldset {
   border: none;
@@ -127,9 +139,6 @@ fieldset {
   }
 }
 
-#textarea-label {
-}
-
 textarea {
   resize: none;
   font-family: inherit;
@@ -145,9 +154,10 @@ textarea {
   align-items: center;
   margin: 30px 0px 30px 2px;
   gap: 20px;
+  justify-content: flex-end;
 
   & h5 {
-    font-size: .9rem;
+    font-size: 0.9rem;
     font-weight: 400;
     padding: 0px 40px 0 0;
   }
@@ -172,4 +182,50 @@ footer {
   width: 350px;
   margin: 10px auto;
   text-align: center;
+}
+
+/* media queries */
+
+@media only screen and (min-width: 768px) {
+  .main-container {
+    width: 500px;
+  }
+
+  textarea {
+    height: 7em;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .main-container {
+    width: 700px;
+    margin: 7rem 0 0 0;
+    padding: 36px;
+  }
+
+  .fname-lname-container {
+    display: flex;
+    width: 100%;
+    gap:20px;
+  }
+
+  #fname-label, #lname-label {
+    width: 50%;
+    margin: 0;
+  }
+
+
+  fieldset {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  #general-label,
+  #support-label {
+    width: 50%;
+  }
+
+  #consent-label {
+    margin: 15px 0 15px 2px;
+  }
 }
