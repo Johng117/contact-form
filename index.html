@@ -37,7 +37,7 @@
               name="general"
               value="General Enquiry"
             />
-            General Enquiry
+            <h5>General Enquiry</h5>
           </label>
 
           <label for="support" id="support-label">
@@ -47,27 +47,30 @@
               name="support"
               value="Support Enquiry"
             />
-            Support Enquiry
+            <h5>Support Enquiry</h5>
           </label>
         </fieldset>
 
         <!-- text area -->
-        <label for="message">Message <span>*</span></label>
-        <textarea name="message" id="message" rows="15" cols="30">
-          The cat was playing in the garden.
-        </textarea>
+        <label for="message" id="textarea-label">Message <span>*</span></label>
+        <textarea name="message" id="message" rows="14" cols="30"></textarea
+        >
+
         <!-- Consent statement -->
-        <input type="radio" id="consent" name="consent" />
-        <label for="consent">I consent to being contacted by the team</label>
+        
+        <label for="consent-input" id="consent-label">
+          <h5>I consent to being contacted by the team <span>*</span></h5>
+          <input type="checkbox" id="consent-input" name="consent-input" />
+        </label>
         <!-- Submit button -->
         <button class="btn">Submit</button>
       </form>
     </section>
 
-    <div class="attribution">
+    <footer class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
       Coded by <a href="#">John Gorman</a>.
-    </div>
+    </footer>
   </body>
 </html>
