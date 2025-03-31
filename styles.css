@@ -1,4 +1,4 @@
-@font-face {
+ @font-face {
   font-family: "Karla";
   src: url("/assets/fonts/static/Karla-Regular.ttf") format("woff");
   font-style: normal;
@@ -38,6 +38,7 @@ body {
 .main-container {
   height: 100%;
   width: 350px;
+  
   margin: 2rem 0 0 0;
   background-color: var(--white);
   border-radius: 20px;
@@ -79,6 +80,15 @@ input,
   height: 50px;
 }
 
+/* TODO hover and focus states */
+
+/* input:hover,
+#general-label:hover,
+#support-label:hover {
+  /* background-color: var(--green-200); */
+  /* border: 1px solid var(--green-900); */
+/* } */
+
 fieldset {
   border: none;
   display: flex;
@@ -93,6 +103,10 @@ fieldset {
   #support-label {
     margin-bottom: 15px;
     display: flex;
+    align-items: center;
+    padding-left: 20px;
+    gap: 12px;
+    font-size: 1rem;
   }
 
   & #general,
@@ -100,10 +114,14 @@ fieldset {
     height: 20px;
     width: 20px;
     border: 1px solid var(--grey-500);
-    opacity: 100%;
+    opacity: 0.5;
+    margin:0;
   }
 }
 
+textarea {
+  resize: none;
+}
 /* #general-label, #support-label {
   border: 1px solid var(--grey-500);
 } */
