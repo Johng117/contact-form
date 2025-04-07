@@ -137,10 +137,9 @@ function reset() {
   queryFieldsetInput;
   textareaInput.value = "";
   consentInput.checked = false;
-  for(let i=0;i<queryContents.length;i++) {
-    queryContents[i].checked=false
+  for (let i = 0; i < queryContents.length; i++) {
+    queryContents[i].checked = false;
   }
-  
 }
 
 // event listeners
@@ -153,16 +152,22 @@ consentInput.addEventListener("change", handleConsentCheck);
 
 // button for submit event
 button.addEventListener("click", (e) => {
-  e.preventDefault()
-  // const fNError = firstNameError(contactDetailsObject.firstName);
-  // const lNError = lastNameError(contactDetailsObject.lastName);
-  // const eError = emailInputError(contactDetailsObject.email);
-  // const qError = queryError([
-  //   contactDetailsObject.queryType.generalQuery,
-  //   contactDetailsObject.queryType.supportQuery,
-  // ]);
-  // const mError = messageInputError(contactDetailsObject.message);
-  // const cError = consentInputError(contactDetailsObject.consent);
-  reset();
-  success.style.display = "block";
+  e.preventDefault();
+  const fNError = firstNameError(contactDetailsObject.firstName);
+  const lNError = lastNameError(contactDetailsObject.lastName);
+  const eError = emailInputError(contactDetailsObject.email);
+  const qError = queryError([
+    contactDetailsObject.queryType.generalQuery,
+    contactDetailsObject.queryType.supportQuery,
+  ]);
+  const mError = messageInputError(contactDetailsObject.message);
+  const cError = consentInputError(contactDetailsObject.consent);
+  if (fNError && lNError && eError && qError && mError && cError) {
+    reset();
+    success.style.display = "block";
+  }
 });
+
+// TODO
+// email validation using a regex
+// finish frontend mentor readme

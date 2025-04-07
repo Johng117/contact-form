@@ -100,7 +100,7 @@ form {
 }
 
 input {
-  /* margin-bottom: 20px; */
+  cursor: pointer;
 }
 
 input,
@@ -113,10 +113,9 @@ input,
   font-size: 0.9 rem;
 }
 
-/* TODO hover/active/focus states (partially done below) */
-input:hover,
-.btn:hover {
-  cursor: pointer;
+input:focus {
+  outline: none;
+  border: 1px solid var(--grey-900);
 }
 
 fieldset {
@@ -149,6 +148,11 @@ fieldset {
   }
 }
 
+#general-label:focus-within,
+#support-label:focus-within {
+  background: var(--green-200);
+}
+
 #textarea-label {
   margin-bottom: 10px;
 }
@@ -169,6 +173,7 @@ textarea {
   margin: 0px 0px 10px 2px;
   gap: 20px;
   justify-content: flex-end;
+  cursor: pointer;
 
   & h5 {
     font-size: 0.9rem;
@@ -190,6 +195,7 @@ textarea {
   background-color: var(--green-600);
   color: var(--white);
   font-weight: 700;
+  cursor: pointer;
 }
 
 #success {
@@ -206,10 +212,9 @@ textarea {
   color: var(--white);
   font-size: 0.9rem;
   border-radius: 10px;
-  
 
   & h5 {
-    font-size: .8rem;
+    font-size: 0.8rem;
     font-weight: 400;
   }
 }
