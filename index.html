@@ -10,38 +10,39 @@
       href="./assets/images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="./styles.css" />
+    <script src="./index.js" defer></script>
     <title>Contact form</title>
   </head>
   <body>
     <section class="main-container">
       <h2 class="title-text">Contact Us</h2>
-      <form class="form">
+      <form class="form" action="" method="POST" target="_blank">
         <!-- input fields -->
         <article class="fname-lname-container">
           <label for="fname" id="fname-label"
-            ><h5>First Name <span>*</span></h5>
+            ><h5>First Name <span class="asterisk">*</span></h5>
             <input type="text" id="fname" name="fname" />
-
-            <h5 class="error-fname-message">This field is required</h5>
+            <div class="error-fname-message"></div>
           </label>
           <label for="lname" id="lname-label"
-            ><h5>Last Name <span>*</span></h5>
+            ><h5>Last Name <span class="asterisk">*</span></h5>
             <input type="text" id="lname" name="lname" />
-            <h5 class="error-lname-message">This field is required</h5>
+            <div class="error-lname-message"></div>
           </label>
         </article>
-        <label for="email">Email Address <span>*</span></label>
+        </div>
+        <label for="email" class="email-label">Email Address <span class="asterisk">*</span></label>
         <input type="email" id="email" name="email" />
-        <h5 class="error-email-message">Please enter a valid email address</h5>
+        <div class="error-email-message"></div>
         <!-- radio buttons -->
         <fieldset id="query-group">
-          <legend>Query Type <span>*</span></legend>
+          <legend>Query Type <span class="asterisk">*</span></legend>
 
           <label for="general" id="general-label">
             <input
               type="radio"
               id="general"
-              name="general"
+              name="query"
               value="General Enquiry"
             />
             <h5>General Enquiry</h5>
@@ -51,28 +52,28 @@
             <input
               type="radio"
               id="support"
-              name="support"
+              name="query"
               value="Support Enquiry"
             />
             <h5>Support Enquiry</h5>
           </label>
         </fieldset>
-        <h5 class="error-query-message">Please select a query type</h5>
+        <div class="error-query-message"></div>
 
         <!-- text area -->
-        <label for="message" id="textarea-label">Message <span>*</span></label>
+        <label for="message" id="textarea-label">Message <span class="asterisk">*</span></label>
         <textarea name="message" id="message" rows="14" cols="30"></textarea>
-        <h5 class="error-textarea-message">This field is required</h5>
+        <div class="error-textarea-message"></div>
 
         <!-- Consent statement -->
 
         <label for="consent-input" id="consent-label">
-          <h5>I consent to being contacted by the team <span>*</span></h5>
+          <h5>I consent to being contacted by the team <span class="asterisk">*</span></h5>
           <input type="checkbox" id="consent-input" name="consent-input" />
         </label>
-        <h5 class="error-consent-message"></h5>
+        <div class="error-consent-message"></div>
         <!-- Submit button -->
-        <button class="btn">Submit</button>
+        <button class="btn" type="button">Submit</button>
       </form>
     </section>
 

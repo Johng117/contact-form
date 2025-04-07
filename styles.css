@@ -64,7 +64,7 @@ form {
   font-size: 0.9rem;
 }
 
-span {
+.asterisk {
   color: var(--green-600);
   margin-left: 2px;
 }
@@ -82,12 +82,25 @@ span {
   width: 100%;
 }
 
-label {
+.error-fname-message,
+.error-lname-message,
+.error-email-message,
+.error-query-message,
+.error-textarea-message,
+.error-consent-message {
+  width: 100%;
+  min-height: 18px;
+  margin-bottom: 2px;
+  padding: 1px;
+  color: var(--red);
+}
+
+.email-label {
   margin-bottom: 10px;
 }
 
 input {
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 
 input,
@@ -100,14 +113,18 @@ input,
   font-size: 0.9 rem;
 }
 
-/* TODO hover and focus states */
+/* TODO hover/active/focus states (partially done below) */
+input:hover,
+.btn:hover {
+  cursor: pointer;
+}
 
 fieldset {
   border: none;
   display: flex;
   flex-direction: column;
   padding: 0px;
-  margin-bottom: 5px;
+  gap: 12px;
 
   & legend {
     margin-bottom: 10px;
@@ -115,18 +132,11 @@ fieldset {
 
   & #general-label,
   #support-label {
-    margin-bottom: 15px;
     display: flex;
     align-items: center;
     padding-left: 20px;
     gap: 12px;
     font-size: 1rem;
-
-    & h5 {
-      font-size: 1rem;
-      font-weight: 400;
-      padding-bottom: 3px;
-    }
   }
 
   & #general,
@@ -137,6 +147,10 @@ fieldset {
     opacity: 0.5;
     margin: 0;
   }
+}
+
+#textarea-label {
+  margin-bottom: 10px;
 }
 
 textarea {
@@ -152,7 +166,7 @@ textarea {
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
-  margin: 30px 0px 30px 2px;
+  margin: 0px 0px 10px 2px;
   gap: 20px;
   justify-content: flex-end;
 
@@ -206,14 +220,14 @@ footer {
   .fname-lname-container {
     display: flex;
     width: 100%;
-    gap:20px;
+    gap: 20px;
   }
 
-  #fname-label, #lname-label {
+  #fname-label,
+  #lname-label {
     width: 50%;
     margin: 0;
   }
-
 
   fieldset {
     flex-direction: row;
@@ -226,6 +240,6 @@ footer {
   }
 
   #consent-label {
-    margin: 15px 0 15px 2px;
+    margin: 0px 0 0px 2px;
   }
 }
