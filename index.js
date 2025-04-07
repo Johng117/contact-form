@@ -16,9 +16,11 @@ const firstNameInput = document.getElementById("fname");
 const lastNameInput = document.getElementById("lname");
 const emailInput = document.getElementById("email");
 const queryFieldsetInput = document.getElementById("query-group");
+const queryContents = document.getElementsByName("query");
 const textareaInput = document.getElementById("message");
 const consentInput = document.getElementById("consent-input");
 const button = document.querySelector(".btn");
+const success = document.getElementById("success");
 
 // variables for error message elements
 const fNameError = document.getElementsByClassName("error-fname-message")[0];
@@ -68,11 +70,9 @@ function handleMessageInput(e) {
 
 function handleConsentCheck(e) {
   consentError.innerHTML = "";
-  if (e.target.checked) {
-    contactDetailsObject.consent = true;
-  } else {
-    contactDetailsObject.consent = false;
-  }
+  e.target.checked
+    ? (contactDetailsObject.consent = true)
+    : (contactDetailsObject.consent = false);
 }
 
 // functions to show error states and messages
@@ -131,14 +131,16 @@ function consentInputError(input) {
 
 // function to reset values
 function reset() {
-  // firstNameInput.value = "";
-  // lastNameInput.value = "";
-  // emailInput.value = "";
-  // queryFieldsetInput;
-  // textareaInput.value = "";
-  // consentInput.checked = false;
-  // console.log("query-group",queryFieldsetInput.checked = false);
-  window.location.reload();
+  firstNameInput.value = "";
+  lastNameInput.value = "";
+  emailInput.value = "";
+  queryFieldsetInput;
+  textareaInput.value = "";
+  consentInput.checked = false;
+  for(let i=0;i<queryContents.length;i++) {
+    queryContents[i].checked=false
+  }
+  
 }
 
 // event listeners
@@ -151,6 +153,7 @@ consentInput.addEventListener("change", handleConsentCheck);
 
 // button for submit event
 button.addEventListener("click", (e) => {
+  e.preventDefault()
   // const fNError = firstNameError(contactDetailsObject.firstName);
   // const lNError = lastNameError(contactDetailsObject.lastName);
   // const eError = emailInputError(contactDetailsObject.email);
@@ -161,4 +164,5 @@ button.addEventListener("click", (e) => {
   // const mError = messageInputError(contactDetailsObject.message);
   // const cError = consentInputError(contactDetailsObject.consent);
   reset();
+  success.style.display = "block";
 });
