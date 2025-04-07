@@ -21,21 +21,21 @@
         <article class="fname-lname-container">
           <label for="fname" id="fname-label"
             ><h5>First Name <span class="asterisk">*</span></h5>
-            <input type="text" id="fname" name="fname" autocomplete="off"/>
+            <input type="text" id="fname" name="fname" autocomplete="off" aria-required="true"/>
             <div class="error-fname-message"></div>
           </label>
           <label for="lname" id="lname-label"
             ><h5>Last Name <span class="asterisk">*</span></h5>
-            <input type="text" id="lname" name="lname" autocomplete="off"/>
+            <input type="text" id="lname" name="lname" autocomplete="off" aria-required="true" />
             <div class="error-lname-message"></div>
           </label>
         </article>
         </div>
         <label for="email" class="email-label">Email Address <span class="asterisk">*</span></label>
-        <input type="email" id="email" name="email" autocomplete="off"/>
+        <input type="email" id="email" name="email" autocomplete="off" aria-required="true"/>
         <div class="error-email-message"></div>
         <!-- radio buttons -->
-        <fieldset id="query-group">
+        <fieldset id="query-group" aria-required="true">
           <legend>Query Type <span class="asterisk">*</span></legend>
 
           <label for="general" id="general-label">
@@ -44,6 +44,7 @@
               id="general"
               name="query"
               value="General Enquiry"
+              aria-required="true"
             />
             <h5>General Enquiry</h5>
           </label>
@@ -54,6 +55,7 @@
               id="support"
               name="query"
               value="Support Enquiry"
+              aria-required="true"
             />
             <h5>Support Enquiry</h5>
           </label>
@@ -62,14 +64,14 @@
 
         <!-- text area -->
         <label for="message" id="textarea-label">Message <span class="asterisk">*</span></label>
-        <textarea name="message" id="message" rows="14" cols="30"></textarea>
+        <textarea name="message" id="message" rows="14" cols="30" aria-required="true"></textarea>
         <div class="error-textarea-message"></div>
 
         <!-- Consent statement -->
 
         <label for="consent-input" id="consent-label">
           <h5>I consent to being contacted by the team <span class="asterisk">*</span></h5>
-          <input type="checkbox" id="consent-input" name="consent-input" />
+          <input type="checkbox" id="consent-input" name="consent-input" aria-required="true" tabindex="0"/>
         </label>
         <div class="error-consent-message"></div>
         <!-- Submit button -->
