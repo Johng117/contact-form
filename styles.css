@@ -113,7 +113,8 @@ input,
   font-size: 0.9 rem;
 }
 
-input:focus {
+input:focus,
+textarea:focus {
   outline: none;
   border: 1px solid var(--grey-900);
 }
@@ -145,6 +146,7 @@ fieldset {
     border: 1px solid var(--grey-500);
     opacity: 0.5;
     margin: 0;
+    accent-color: var(--green-600);
   }
 }
 

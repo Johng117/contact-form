@@ -11,6 +11,9 @@ const contactDetailsObject = {
   consent: false,
 };
 
+// regex for validation
+const re = new RegExp("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$");
+
 // variables for each element selected
 const firstNameInput = document.getElementById("fname");
 const lastNameInput = document.getElementById("lname");
@@ -95,7 +98,7 @@ function lastNameError(name) {
 }
 
 function emailInputError(email) {
-  if (!email) {
+  if (!email || re.test(email) === false) {
     emailInput.style.borderColor = "#d73c3c";
     emailError.innerHTML = "Please enter a valid email address";
     return false;
@@ -169,5 +172,6 @@ button.addEventListener("click", (e) => {
 });
 
 // TODO
-// email validation using a regex
+
 // finish frontend mentor readme
+// change colour of radio buttons
